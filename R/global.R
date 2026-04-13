@@ -1,0 +1,25 @@
+# To silence R CMD check for NSE (non-standard evaluation) variables in ggplot2
+utils::globalVariables(c(
+  "invasion_status",
+  "year",
+  "growthhabit",
+  "LEVEL2_NAM",
+  "duration",
+  "longitude",
+  "latitude",
+  "acc_species_name",
+  "occurrence",
+  "LEVEL2_COD",
+  "tdwg_level2",
+  "TDWG_Level2", "TDWG_Level2_Names",
+  "LEVEL2_COD", "tdwg_level2", "species_name",
+  "seed_price",
+  "max_seed_price",
+  "min_seed_price",
+  "nl_price",
+  "max_nl_price",
+  "min_nl_price",
+  "pl_price",
+  "max_pl_price",
+  "min_pl_price"
+))

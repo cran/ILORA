@@ -1,0 +1,159 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```markdown
+# ILORA: Indian Alien Flora Information (ILORA) Database Retrieval
+
+## Overview
+
+The ILORA (Indian Alien Flora Information) package is designed to facilitate the retrieval and analysis of species occurrence data from the Indian Alien Flora Information (ILORA) database. The package includes functions for retrieving species names, variable names, and species data based on user-specified criteria, along with exploratory data analysis (EDA) functionalities.
+
+## Installation
+
+You can install the ILORA package from CRAN using the following command:
+
+```r
+install.packages("ILORA")
+```
+
+Once installed, load the ILORA package into your R session:
+
+```r
+library(ILORA)
+```
+
+## Functions Provided
+
+The ILORA package provides several functions to facilitate data retrieval and analysis:
+
+- `get_data`: Retrieves data for a given species from the ILORA database based on specified variables.
+- `get_species_details`: Retrieves comprehensive details about a specified species from multiple tables in the ILORA database.
+- `EDA`: Dynamically calls a specified EDA function from a list of available functions.
+- `get_species_names`: Retrieves example species names available in the ILORA database.
+- `get_variable_names`: Retrieves example variable names relevant to species data analysis.
+- `get_table_names`: Retrieves example table names relevant to species data analysis.
+
+
+## Functions Available in EDA
+
+The `EDA` function contains ten different exploratory data analysis functions for user convenience:
+
+- `plot_species_on_map`: Plots given species on a map of India.
+- `bar_plot`: Provides a bar plot of the five categories of invasion status.
+- `species_count_plot`: Generates a list containing plots of growth habit and duration, along with their respective summary tables.
+- `introduction_pathways_plot`: Creates a pie chart of introduction pathways.
+- `plot_first_record_year_histogram`: Displays a histogram based on the first record date, showing the number of species recorded over specific time intervals.
+- `calculate_mrt`: Calculates minimum residence time (MRT), defined as (current year – first recorded year).
+- `calculate_total_uses`: Calculates the total number of uses for each species.
+- `calculate_market_metrics`: Generates a list with metrics including average seed and plant prices, as well as the highest and lowest prices and their respective species.
+- `visualize_native_range`: Visualizes the native range of a species on a global map.
+- `visualize_naturalized_range`: Visualizes the naturalized range of a species on a global map.
+
+To get details about each function, use the help file with `?{function name}`. For example: `?bar_plot`.
+
+## Examples
+
+### Retrieving Data from the Database
+
+To retrieve data for a specific species and variable from the ILORA package:
+
+```r
+species_data <- get_data("Rotala densiflora (Roth) Koehne", c("orders", "0700_Fuels2", "genus", "species"))
+head(species_data)
+```
+
+### Retrieving Comprehensive Details About a Specified Species
+
+To retrieve comprehensive details about a specified species from multiple tables in the ILORA database:
+
+```r
+details <- get_species_details("Rotala densiflora (Roth) Koehne")
+View(details)
+```
+
+### EDA Function
+
+This function dynamically calls a specified EDA function from a list of available functions:
+
+```r
+EDA(calculate_mrt, species = "Rotala densiflora (Roth) Koehne")
+```
+
+```r
+EDA(bar_plot)
+```
+
+### Retrieving Species Names
+
+To retrieve example species names from the ILORA package:
+
+```r
+species <- get_species_names()
+head(species)
+```
+
+### Retrieving Variable Names
+
+To retrieve variable names from the ILORA package:
+
+```r
+variable <- get_variable_names()
+head(variable)
+```
+
+### Retrieving Table Names
+
+To retrieve example table names from the ILORA package:
+
+```r
+table <- get_table_names()
+head(table)
+```
+
+### To get variable descriptions
+
+To get variable description from the ILORA package:
+
+```r
+ilora_variable_guide()
+```
+
+## License
+
+This package is licensed under the MIT License. See the LICENSE file for more details.
+
+## Attribution
+
+If you use data or functions from the ILORA package in your research or projects, please give appropriate credit to the authors. The authors of the ILORA package are:
+
+- Ruqaiya Shaikh (ruqaiyashaikh41@gmail.com)
+- Achyut Kumar Banerjee (banerjeeachyut31@outlook.com)
+- Abhishek Mukherjee (abhi.mukh@yahoo.com)
+- Amiya Ranjan Bhowmick (amiyaiitb@gmail.com)
+
+We sincerely acknowledge Sonal Dhatrak for her valuable support and assistance in this work.
+
+Please cite the package as follows:
+
+```
+@Manual{ILORA,
+  title = {Indian Alien Flora Information (ILORA) Database Retrieval},
+  author = {Ruqaiya Shaikh and Achyut Kumar Banerjee and Abhishek Mukherjee and Amiya Ranjan Bhowmick},
+  year = {2024},
+  note = {R package version 0.1.0},
+  url = {https://CRAN.R-project.org/package=ILORA},
+}
+```
+
+## Contributions
+
+We welcome contributions to the ILORA package. If you have any suggestions or find any issues, please reach us on email. If the user wishes to upload data they should follow the instruction given in (<https://ilora2020.wixsite.com/ilora2020/submit-data>)
+
+## Contact
+
+For any questions or inquiries, please contact Amiya Ranjan Bhowmick (amiyaiitb@gmail.com)
+```
+
+This `README.md` file provides a comprehensive overview of your ILORA package, including how to install, use, and attribute the package correctly. You can modify the GitHub URL and any other details as needed before publishing.

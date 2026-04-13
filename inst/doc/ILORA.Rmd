@@ -1,0 +1,126 @@
+---
+title: "ILORA"
+output: 
+  rmarkdown::html_document
+vignette: >
+  %\VignetteIndexEntry{ILORA}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+# Introduction to ILORA Package
+
+## Overview
+
+The ILORA (Indian Alien Flora Information) package is designed to facilitate the retrieval and analysis of species occurrence data from the Indian Alien Flora Information (ILORA) database. This vignette provides an introduction to using the ILORA package, which includes three main functions: `get_data()`, `get_species_details()`, and `EDA()`. Additionally, there are three supporting functions: `get_species_names()`, `get_variable_names()`, and `get_table_names()`. The `EDA` function includes ten different exploratory data analysis functions for user convenience.
+
+## Installation
+
+You can install the ILORA package from CRAN using the following command:
+
+```r
+install.packages("ILORA")
+```
+
+Alternatively, you can install the development version from GitHub:
+
+```r
+devtools::install_github("Ruqaiya41/ILORA")
+```
+
+Once installed, load the ILORA package into your R session:
+
+```r
+library(ILORA)
+```
+
+## Functions Provided
+
+The ILORA package provides several functions to facilitate data retrieval and analysis:
+
+- `get_data`: Retrieves data for a given species from the ILORA database based on specified variables.
+- `get_species_details`: Retrieves comprehensive details about a specified species from multiple tables in the ILORA database.
+- `EDA`: Dynamically calls a specified EDA function from a list of available functions.
+- `get_species_names`: Retrieves example species names available in the ILORA database.
+- `get_variable_names`: Retrieves example variable names relevant to species data analysis.
+- `get_table_names`: Retrieves example table names relevant to species data analysis.
+
+## Functions Available in EDA
+
+The `EDA` function contains ten different exploratory data analysis functions for user convenience:
+
+- `plot_species_on_map`: Plots given species on a map of India.
+- `bar_plot`: Provides a bar plot of the five categories of invasion status.
+- `species_count_plot`: Generates a list containing plots of growth habit and duration, along with their respective summary tables.
+- `introduction_pathways_plot`: Creates a pie chart of introduction pathways.
+- `plot_first_record_year_histogram`: Displays a histogram based on the first record date, showing the number of species recorded over specific time intervals.
+- `calculate_mrt`: Calculates minimum residence time (MRT), defined as (current year – first recorded year).
+- `calculate_total_uses`: Calculates the total number of uses for each species.
+- `calculate_market_metrics`: Generates a list with metrics including average seed and plant prices, as well as the highest and lowest prices and their respective species.
+- `visualize_native_range`: Visualizes the native range of a species on a global map.
+- `visualize_naturalized_range`: Visualizes the naturalized range of a species on a global map.
+
+To get details about each function, use the help file with `?{function name}`. For example: `?bar_plot`.
+
+## Three Main Functions of the ILORA Package
+
+### Retrieving Data from the Database
+
+To retrieve data for a specific species and variable from the ILORA package:
+
+```r
+species_data <- get_data("Rotala densiflora (Roth) Koehne", c("orders", "0700_Fuels2", "genus", "species"))
+head(species_data)
+```
+
+### Retrieving Comprehensive Details About a Specified Species
+
+To retrieve comprehensive details about a specified species from multiple tables in the ILORA database:
+
+```r
+details <- get_species_details("Rotala densiflora (Roth) Koehne")
+View(details)
+```
+
+### EDA Function
+
+This function dynamically calls a specified EDA function from a list of available functions:
+
+```r
+EDA(calculate_mrt, species = "Rotala densiflora (Roth) Koehne")
+```
+
+```r
+EDA(bar_plot)
+```
+
+## Three Supporting Functions of the ILORA Package
+
+### Retrieving Species Names
+
+To retrieve example species names from the ILORA package:
+
+```r
+species <- get_species_names()
+head(species)
+```
+
+### Retrieving Variable Names
+
+To retrieve variable names from the ILORA package:
+
+```r
+variable <- get_variable_names()
+head(variable)
+```
+
+### Retrieving Table Names
+
+To retrieve example table names from the ILORA package:
+
+```r
+table <- get_table_names()
+head(table)
+```
+
