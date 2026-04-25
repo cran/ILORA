@@ -1,6 +1,6 @@
 Package: ILORA
-Title: 'ILORA': Indian Alien Flora Information Database Retrieval
-Version: 0.1.0
+Title: Indian Alien Flora Information Database Retrieval
+Version: 0.1.1
 Authors@R: 
     c(
       person("Ruqaiya", "Shaikh", email = "ruqaiyashaikh41@gmail.com", role = c("aut", "cre")),
@@ -8,7 +8,7 @@ Authors@R:
       person("Abhishek", "Mukherjee", email = "abhi.mukh@yahoo.com", role = "aut"),
       person("Amiya Ranjan", "Bhowmick", email = "amiyaiitb@gmail.com", role = "aut")
     )
-Description: Provides tools to access, query, and visualize species occurrence data from the 'ILORA' package. The package enables users to retrieve species names, explore available variables, and extract species-level data based on user-defined criteria. It also supports exploratory data analysis and visualization to facilitate ecological and bio-geographical research. Further details about the database are available at <https://ilora2020.wixsite.com/ilora2020>.
+Description: The Indian Alien Flora Information (ILORA) database contains 14 invasion-relevant variables for 1388 alien plant species in India. The package enables exploration of the database using user-defined criteria. Using this package, users can retrieve variable-specific and species-level data from the database. The package also supports exploratory data analysis and visualization to give users an idea of the variables of interest. Further details about the database are available at <https://iloradb.wixsite.com/alienflora>.
 License: MIT + file LICENSE
 Depends: R (>= 4.0.0)
 Imports: DBI, RColorBrewer, units, RPostgres, dplyr, ggplot2, plotly,
@@ -19,11 +19,11 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2026-04-07 13:03:38 UTC; fossee
+Packaged: 2026-04-25 16:14:34 UTC; fossee
 Author: Ruqaiya Shaikh [aut, cre],
   Achyut Kumar Banerjee [aut],
   Abhishek Mukherjee [aut],
   Amiya Ranjan Bhowmick [aut]
 Maintainer: Ruqaiya Shaikh <ruqaiyashaikh41@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-04-13 14:10:02 UTC
+Date/Publication: 2026-04-25 16:50:07 UTC
