@@ -2,6 +2,11 @@ library(testthat)
 library(ILORA)
 
 test_that("get_species_names includes known species if present", {
+  # Skip if no internet / DB not available
+  skip_if_offline()
+
+  # Skip on CRAN / CI
+  skip_on_cran()
   species <- get_species_names()
 
   expect_type(species, "character")
@@ -17,6 +22,11 @@ test_that("get_species_names includes known species if present", {
 
 
 test_that("get_variable_names returns a named list of variables", {
+  # Skip if no internet / DB not available
+  skip_if_offline()
+
+  # Skip on CRAN / CI
+  skip_on_cran()
   variables <- get_variable_names()
 
   # Should be a list
@@ -35,6 +45,11 @@ test_that("get_variable_names returns a named list of variables", {
 
 
 test_that("get_table_names returns a character vector", {
+  # Skip if no internet / DB not available
+  skip_if_offline()
+
+  # Skip on CRAN / CI
+  skip_on_cran()
   tables <- get_table_names()
 
   expect_type(tables, "character")
@@ -44,6 +59,11 @@ test_that("get_table_names returns a character vector", {
 
 
 test_that("get_data returns a data frame for valid inputs", {
+  # Skip if no internet / DB not available
+  skip_if_offline()
+
+  # Skip on CRAN / CI
+  skip_on_cran()
 
   species_data <- get_data(
     "Rubus buergeri Miq.",
@@ -61,6 +81,11 @@ test_that("get_data returns a data frame for valid inputs", {
 })
 
 test_that("get_data returns error for invalid species", {
+  # Skip if no internet / DB not available
+  skip_if_offline()
+
+  # Skip on CRAN / CI
+  skip_on_cran()
   expect_error(
     get_data("Invalid species", c("Order_taxonomic", "0700_Fuels", "Genus", "Species")),
     "Species not found"
@@ -69,6 +94,11 @@ test_that("get_data returns error for invalid species", {
 
 
 test_that("get_species_details retrieves correct details for a single species", {
+  # Skip if no internet / DB not available
+  skip_if_offline()
+
+  # Skip on CRAN / CI
+  skip_on_cran()
 
   species_name <- "Dahlia coccinea Cav."
   result <- get_species_details(species_name)
@@ -104,6 +134,11 @@ test_that("get_species_details retrieves correct details for a single species", 
 
 
 test_that("get_species_details retrieves correct details for multiple species", {
+  # Skip if no internet / DB not available
+  skip_if_offline()
+
+  # Skip on CRAN / CI
+  skip_on_cran()
 
   species_names <- c("Dahlia coccinea Cav.", "Acacia auriculiformis Benth.")
   result <- get_species_details(species_names)
@@ -148,6 +183,11 @@ test_that("get_species_details retrieves correct details for multiple species", 
 
 
 test_that("get_species_details handles invalid input types", {
+  # Skip if no internet / DB not available
+  skip_if_offline()
+
+  # Skip on CRAN / CI
+  skip_on_cran()
   expect_error(
     get_species_details(123),
     class = "error"
@@ -156,6 +196,7 @@ test_that("get_species_details handles invalid input types", {
 
 
 test_that("visualize_native_range creates a plot for given species", {
+
   # Skip if no internet / DB not available
   skip_if_offline()
 

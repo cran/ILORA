@@ -1,6 +1,6 @@
 Package: ILORA
 Title: Indian Alien Flora Information Database Retrieval
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     c(
       person("Ruqaiya", "Shaikh", email = "ruqaiyashaikh41@gmail.com", role = c("aut", "cre")),
@@ -19,11 +19,11 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2026-04-25 16:14:34 UTC; fossee
+Packaged: 2026-05-12 09:21:08 UTC; fossee
 Author: Ruqaiya Shaikh [aut, cre],
   Achyut Kumar Banerjee [aut],
   Abhishek Mukherjee [aut],
   Amiya Ranjan Bhowmick [aut]
 Maintainer: Ruqaiya Shaikh <ruqaiyashaikh41@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-04-25 16:50:07 UTC
+Date/Publication: 2026-05-12 10:30:15 UTC
